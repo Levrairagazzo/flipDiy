@@ -1,2 +1,17 @@
-# flipDiy
-try tinderlink fip card
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Start the project
+   ```js
+   npm run dev
+   ```
+
+
+Make sure you have Node.Js installed on your machine. 
