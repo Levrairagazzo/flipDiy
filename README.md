@@ -2,7 +2,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/<github_username>/flipDiy.git
+   git clone https://github.com/FrancisThierry/flipDiy.git
    ```
 2. Install NPM packages
    ```sh
