@@ -14,6 +14,21 @@ export default function ModelViewer({name, glbAddress}){
   const singleTapHandler = () => {
     setLiked(!liked)
   }
+
+  const switchColor = (event) => {
+    const colorString = event.target.getAttribute('data-color');
+
+    const model = modelRef.current;
+    if (model) {
+      const materials = model.model.materials;
+      if (materials.length > 0) {
+        const material = materials[0];
+        material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+      }
+    }
+  };
+
+  
   
 
   
@@ -22,9 +37,7 @@ export default function ModelViewer({name, glbAddress}){
       <main>
         <model-viewer
           onClick={doubleTapHandler} 
-          ref={(ref) => {
-            modelRef.current = ref;
-          }}
+          ref={modelRef}
           src= {glbAddress}
           poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
           alt="Reuse Milk Bottle"
@@ -32,6 +45,11 @@ export default function ModelViewer({name, glbAddress}){
           camera-controls
           auto-rotate ar
           >
+          <div className="controls" id="color-controls">
+            <button data-color="#ff0000" onClick={switchColor}>Red</button>
+            <button data-color="#00ff00" onClick={switchColor}>Green</button>
+            <button data-color="#0000ff" onClick={switchColor}>Blue</button>
+          </div>
           </model-viewer>
           <section className="attribution">
           <span>
