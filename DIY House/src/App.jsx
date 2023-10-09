@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import './App.css'
 import Sample from './components/Sample'
+import NavBar from './components/NavBar'
+import { BrowserRouter } from 'react-router-dom';
+import './styles/App.css'
 
 const mockDB = [
   { 
@@ -22,10 +24,13 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
+      <NavBar/>
       {
         mockDB.map((object) => <Sample objectName={object.name} glbFile={object.glbFileAddress} key={object.key} />)
       }
-
+     
+      </BrowserRouter>
       
       
        
