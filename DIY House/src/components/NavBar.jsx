@@ -1,26 +1,30 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/NavBar.css';
 import { useState } from 'react';
-import  Logo from "./react.svg?component";
-import  hamburgerMenu from "./hamburger_menu.svg?component";
+import  heart from "../assets/heart.svg?component";
+import  redHeart from "../assets/heart_red.svg?component";
+import  hamburgerMenu from "../assets/hamburger_menu.svg?component";
 
 
 
 const NavBar = () => {
     const [showNavbar, setShowNavbar] = useState(false)
+    const [heartIcon, setHeartIcon] = useState(heart)
   
     const handleShowNavbar = () => {
       setShowNavbar(!showNavbar)
     }
+
+   
   
     return (
       <nav className="navbar">
         <div className="container">
-          <div className="logo">
-           <h1>DIY House</h1>
-          </div>
           <div className="menu-icon" onClick={handleShowNavbar}>
             <img src={hamburgerMenu} alt='logo'/>
+          </div>
+          <div className="logo">
+            <h1>DIY House</h1>
           </div>
           <div className={`nav-elements  ${showNavbar && 'active'}`}>
             <ul>

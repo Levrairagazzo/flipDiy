@@ -1,19 +1,23 @@
 import {useState, useRef} from 'react';
+import  blackHeart from "../assets/heart.svg?component";
+import  redHeart from "../assets/heart_red.svg?component";
 
 export default function ModelViewer({name, glbAddress}){
   
   const [liked, setLiked] = useState(true);
+  const [heartIcon, setHeartIcon] = useState(blackHeart)
   const modelRef = useRef();
 
   const doubleTapHandler = () => {
     if(event.detail == 2){
-			setLiked(!liked)
+			handleHeartClick()
 		}
   }
 
-  const singleTapHandler = () => {
-    setLiked(!liked)
-  }
+  const handleHeartClick = () => {
+    if(heartIcon === blackHeart) setHeartIcon(redHeart);
+    else setHeartIcon(blackHeart);
+  };
 
   const switchColor = (event) => {
     const colorString = event.target.getAttribute('data-color');
@@ -60,18 +64,7 @@ export default function ModelViewer({name, glbAddress}){
             <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"/>
           </a>
           <div className='btnContainer'>
-             {liked ? 
-               <button 
-                      onClick={singleTapHandler}
-                      className="thumbUp" 
-                      style={{backgroundColor: "red"}}
-                      >{"\ud83d\udc4e"}</button> : 
-                <button 
-                      onClick={singleTapHandler}
-                      className="thumbUp" 
-                      style={{backgroundColor: "green"}} 
-             >{"\ud83d\udc4d"}</button>
-              }
+             <img src={heartIcon} alt='heart_icon'/>
           </div>
           </section>
     </main>

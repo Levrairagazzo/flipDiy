@@ -47,7 +47,7 @@ model-viewer {
 }
 
 .attribution img {
-  opacity: 0.5;
+  /* opacity: 0.5; */
   height: 2em;
 }
 
