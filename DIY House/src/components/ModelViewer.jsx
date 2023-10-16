@@ -19,19 +19,6 @@ export default function ModelViewer({name, glbAddress}){
     else setHeartIcon(blackHeart);
   };
 
-  const switchColor = (event) => {
-    const colorString = event.target.getAttribute('data-color');
-
-    const model = modelRef.current;
-    if (model) {
-      const materials = model.model.materials;
-      if (materials.length > 0) {
-        const material = materials[0];
-        material.pbrMetallicRoughness.setBaseColorFactor(colorString);
-      }
-    }
-  };
-
   
   
 
@@ -49,13 +36,8 @@ export default function ModelViewer({name, glbAddress}){
           camera-controls
           auto-rotate ar
           >
-          <div className="controls" id="color-controls">
-            <button data-color="#ff0000" onClick={switchColor}>Red</button>
-            <button data-color="#00ff00" onClick={switchColor}>Green</button>
-            <button data-color="#0000ff" onClick={switchColor}>Blue</button>
-          </div>
           </model-viewer>
-          <section className="attribution">
+          {/* <section className="attribution">
           <span>
           <h1>{name}</h1>
           </span>
@@ -66,7 +48,7 @@ export default function ModelViewer({name, glbAddress}){
           <div className='btnContainer'>
              <img src={heartIcon} alt='heart_icon'/>
           </div>
-          </section>
+          </section> */}
     </main>
     </>
   )
