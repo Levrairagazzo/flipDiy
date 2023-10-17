@@ -47,11 +47,16 @@ model-viewer {
 }
 
 .attribution {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   margin: 1em;
   bottom: 0;
+}
+.attribution div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .attribution h1 {
@@ -80,12 +85,24 @@ footer {
   line-height: 1.5em;
 }
 
-
-button {
-  margin : 1.5em;
+.fabLabs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.textbox {
+  border: 1px solid #f3f3f3;
+  height: 2rem;
+  outline: none;
+  box-sizing: border-box;
+  padding: 1px 10px;
+  transition: 0.2s ease-in-out;
+  width: 100%;
 }
 
-.thumbUp{
-  margin:0em;
-  padding:0em;
+.textbox:focus {
+  transition: 0.2s ease-in-out;
+  border: 1px solid blue;
 }
+
