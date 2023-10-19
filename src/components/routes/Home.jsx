@@ -1,23 +1,22 @@
 import { useState } from 'react'
 import NavBar from '../NavBar'
-// import '../../styles/Home.css'
 import ObjectCard from '../ObjectCard'
 import Footer from '../Footer'
 
 const mockDB = [
   { 
-    glbFileAddress: "https://cdn.glitch.global/b5ca4ccb-ed4c-4ece-b66c-5f831bd45890/KratkyMilkModele.glb?v=1695286915592",
+    glbFileAddress:'src/assets/images/KratkyMilkModele.glb' ,
     name : "Kratky Milk Modele",
     key: 1,
   },
   {
-    glbFileAddress: "https://cdn.glitch.global/b5ca4ccb-ed4c-4ece-b66c-5f831bd45890/rainCollector.glb?v=1695469827748",
+    glbFileAddress: 'src/assets/images/rainCollector.glb' ,
     name : "Rain Collector",
     key: 2,
   }
   ,
   {
-    glbFileAddress: "https://cdn.glitch.global/b5ca4ccb-ed4c-4ece-b66c-5f831bd45890/greenhouse.glb?v=1696882095177",
+    glbFileAddress: 'src/assets/images/greenhouse.glb',
     name : "Green House",
     key: 3,
   }
@@ -26,7 +25,7 @@ const mockDB = [
 
 ]
 
-function ModelItems() {
+function Home() {
 
   return (
     <>
@@ -40,4 +39,4 @@ function ModelItems() {
   )
 }
 
-export default ModelItems;
+export default Home;
