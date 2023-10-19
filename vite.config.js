@@ -25,6 +25,8 @@ export default defineConfig({
     }),
   ],
 
+  base:'/flipDiy_Sydney/',
+
   optimizeDeps: {
     include: ['@react-three/fiber', '@react-three/drei'],
   },
